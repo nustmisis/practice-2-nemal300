@@ -42,3 +42,16 @@ bbbacacac, на это уйдёт 9 ходов, ниже указаны стро
 @author: workk
 """
 
+def count_moves(s, c):
+    moves = 0
+    count = 0
+    for char in s[::-1]:
+        if char == c:
+            count += 1
+        else:
+            moves += count
+    return moves
+
+string = "abbabb"
+character = "b"
+print(count_moves(string, character))

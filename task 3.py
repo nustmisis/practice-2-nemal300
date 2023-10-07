@@ -16,3 +16,20 @@ Created on Fri Sep 22 15:05:53 2023
 это в сообщении
 """
 
+def check_license_plate_format(license_plate):
+    if len(license_plate) == 6:
+        if license_plate[:3].isupper() and license_plate[3:].isdigit():
+            return "Старый формат"
+    elif len(license_plate) == 7:
+        if license_plate[:4].isdigit() and license_plate[4:].isupper():
+            return "Новый формат"
+    
+    return "Не соответствует ни одному формату"
+
+def main():
+    license_plate = input("Введите номерной знак автомобиля: ")
+    format_type = check_license_plate_format(license_plate)
+    print(format_type)
+
+if __name__ == "__main__":
+    main()
